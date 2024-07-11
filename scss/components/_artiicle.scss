@@ -55,6 +55,9 @@
 
   &__social {
     margin-bottom: 49px;
+    list-style: none;
+    display: flex;
+    column-gap: 5px;
   }
 
   &__paragraph {

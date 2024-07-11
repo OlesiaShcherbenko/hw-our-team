@@ -106,6 +106,9 @@ body {
 }
 .article__social {
   margin-bottom: 49px;
+  list-style: none;
+  display: flex;
+  column-gap: 5px;
 }
 .article__paragraph {
   font-weight: 500;
