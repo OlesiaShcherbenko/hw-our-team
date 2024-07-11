@@ -1,0 +1,30 @@
+.header {
+  @extend .container;
+  text-align: center;
+
+  &__title {
+    @include text(60px, 900, $main-color, 66px, "secondary");
+    margin-bottom: 40px;
+  }
+
+  &__subtitle {
+    @include text(18px, 500, $gray-2, 24px);
+    margin-bottom: 15px;
+  }
+
+  &__divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__divider::before,
+  &__divider::after {
+    margin: 0 5px;
+    content: "";
+    display: block;
+    width: 210px;
+    height: 1px;
+    background-color: $main-color;
+  }
+}
