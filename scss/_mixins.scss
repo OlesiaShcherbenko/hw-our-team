@@ -1,19 +1,31 @@
 @use "sass:math";
 @use "sass:string";
+@use "sass:map";
 
 @function rem($sizeInPx) {
-    $remSize: math.div($sizeInPx, 16px);
-    @return #{$remSize}rem;
+  $remSize: math.div($sizeInPx, 16px);
+  @return #{$remSize}rem;
+}
+
+$fonts: (
+  "main": $font-main,
+  "secondary": $font-secondary,
+);
+
+@mixin font-family($type) {
+  font-family: map.get($fonts, $type);
 }
 
 @mixin text(
   $font-size: 16px,
   $font-weight: 400,
-  $color: black,
+  $color: $gray-4,
   $line-height: initial,
+  $font-family: 'main'
 ) {
   font-weight: $font-weight;
   color: $color;
+  @include font-family($font-family);
 
   @if (string.index(#{$font-size}, "px")) {
     font-size: rem($font-size);
@@ -26,4 +38,6 @@
   } @else {
     line-height: $line-height;
   }
+
+  
 }
